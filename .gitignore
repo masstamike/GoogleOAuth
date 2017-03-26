@@ -4,3 +4,6 @@ node_modules/
 
 # IDE Generated
 .idea/
+
+# Config
+secrets.json
