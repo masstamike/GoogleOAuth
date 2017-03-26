@@ -1,0 +1,6 @@
+# Compiled/Downloaded resources
+bin/
+node_modules/
+
+# IDE Generated
+.idea/
