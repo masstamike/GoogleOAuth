@@ -28,7 +28,7 @@ passport.use(new GoogleStrategy({
     console.log(profile.language);
     console.log(profile.emails);
     console.log(profile.gender);
-    done();
+    done(undefined, {googleId: profile.id});
   }
 ));
 
@@ -48,5 +48,13 @@ router.get( '/auth/google/callback',
     successRedirect: '/auth/google/success',
     failureRedirect: '/auth/google/failure'
   }));
+
+router.get('/auth/google/success', function(req, res, next) {
+    res.send("success");
+  });
+
+router.get('/auth/google/failure', function(req, res, next) {
+  res.send("failure");
+});
 
 module.exports = router;
